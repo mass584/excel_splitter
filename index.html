@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'" />
+  <title>Excel Splitter</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Excel Splitter</h1>
+    <p class="description">
+      1行目をヘッダーとして全ファイル共通にし、2行目以降を指定行数ごとに分割します。<br />
+      出力先は元ファイルと同じフォルダ、ファイル名に <code>_0001</code> のような連番が付きます。
+    </p>
+
+    <section class="field">
+      <label>入力ファイル</label>
+      <div class="row">
+        <input id="filePath" type="text" placeholder="Excelファイル（.xlsx / .xls / .xlsm）を選択..." readonly />
+        <button id="selectBtn" type="button">選択</button>
+      </div>
+    </section>
+
+    <section class="field">
+      <label for="rows">1ファイルあたりのデータ行数（ヘッダー除く）</label>
+      <input id="rows" type="number" min="1" step="1" value="1000" />
+    </section>
+
+    <button id="splitBtn" class="primary" type="button" disabled>分割実行</button>
+
+    <section id="status" class="status"></section>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "name": "excel-splitter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Excelファイルを指定行数ごとに分割するデスクトップアプリ",
   "main": "main.js",
   "scripts": {
@@ -41,7 +41,10 @@
       "target": [
         {
           "target": "dmg",
-          "arch": ["arm64", "x64"]
+          "arch": [
+            "arm64",
+            "x64"
+          ]
         }
       ],
       "category": "public.app-category.productivity",
@@ -51,11 +54,15 @@
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         },
         {
           "target": "portable",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "artifactName": "${productName}-${version}-${arch}-setup.${ext}"
